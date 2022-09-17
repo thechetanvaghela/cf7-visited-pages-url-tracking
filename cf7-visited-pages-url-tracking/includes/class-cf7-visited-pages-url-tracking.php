@@ -157,6 +157,9 @@ class Cf7_Visited_Pages_Url_Tracking {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		# admin menu register
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'cf7vput_admin_menu_callback' );
+
 	}
 
 	/**

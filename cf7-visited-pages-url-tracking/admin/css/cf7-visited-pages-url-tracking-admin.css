@@ -2,3 +2,67 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+
+.cf7vput-container .cf7vput-our-plugins-wrap img.cf7vput-plugin-icon{
+    width: 128px;
+}
+
+.cf7vput-plugins-section-wrap
+{
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+.cf7vput-our-plugins-wrap
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.cf7vput-our-plugins-wrap p
+{
+    text-align: unset;
+}
+.cf7vput-our-plugins-wrap p:after {
+   content: none;
+   position: unset;
+}
+.cf7vput-entry-wrap{
+    display: flex;
+    /*padding: 0 20px 0 0;*/
+}
+.cf7vput-our-plugins-wrap .cf7vput-plugin-card{
+    background-color: #fff;
+    margin-bottom: 20px;
+    width: calc(50% - 20px);
+}
+.cf7vput-our-plugins-wrap .cf7vput-plugin-card img
+{
+    padding: 5px;
+}
+.cf7vput-our-plugins-wrap .cf7vput-plugin-card footer { 
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width:1200px)  { 
+    .cf7vput-container
+    {
+        margin: 0;
+    }
+
+    .cf7vput-entry-thumbnail
+    {
+        width: 30%;
+    }
+    .cf7vput-entry
+    {
+        width: 70%;
+    }
+    .cf7vput-container .cf7vput-our-plugins-wrap img.cf7vput-plugin-icon{
+        width: 90px;
+    }
+
+}

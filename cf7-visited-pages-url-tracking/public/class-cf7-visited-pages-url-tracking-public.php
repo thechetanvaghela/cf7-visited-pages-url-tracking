@@ -115,8 +115,7 @@ class Cf7_Visited_Pages_Url_Tracking_Public {
 			{
 				if (strpos($mail['body'], '[CF7VPUT_VISITED_Details]') !== false) 
 				{
-					$visited_list = json_encode($_COOKIE['cf7vput_last_visited_pages']);
-					$cookie_visited_list = $_COOKIE['cf7vput_last_visited_pages'];
+					$cookie_visited_list = sanitize_text_field($_COOKIE['cf7vput_last_visited_pages']);
 					$visited_list = stripslashes($cookie_visited_list);
 					$visited_list_array = json_decode($visited_list, true);
 					if(!empty($visited_list_array))
@@ -129,9 +128,10 @@ class Cf7_Visited_Pages_Url_Tracking_Public {
 							$html .= '</li>';
 						}
 						$html .= '</li>';
+					
+						$finalstring = "Last Visited Pages: " . $html;
+						$mail['body'] = str_replace("[CF7VPUT_VISITED_Details]",$finalstring,$mail['body']);
 					}
-					$finalstring = "Last Visited Pages: " . $html;
-					$mail['body'] = str_replace("[CF7VPUT_VISITED_Details]",$finalstring,$mail['body']);
 				}
 			}
 			$contact_form->set_properties( array( 'mail' => $mail ) );

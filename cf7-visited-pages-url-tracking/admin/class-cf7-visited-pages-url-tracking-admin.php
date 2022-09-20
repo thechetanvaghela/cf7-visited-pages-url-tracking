@@ -273,7 +273,7 @@ class Cf7_Visited_Pages_Url_Tracking_Admin {
 														set_transient( $transient, esc_attr($html), $expiration );
 													}
 												}
-												echo html_entity_decode($html);
+												echo html_entity_decode(esc_html($html));
 												?>
 											</div>
 										</div> 
